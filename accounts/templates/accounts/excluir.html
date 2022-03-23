@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block titulo%}Excluir Contato | {%endblock%}
+
+{%block 'conteudo'%}
+{% include 'parciais/_messages.html' %}
+<div class="container">
+    <form action="{%url 'excluir'%}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{ form }}
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-primary">Excluir</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{%endblock%}
